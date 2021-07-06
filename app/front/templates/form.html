@@ -10,7 +10,9 @@
             {{ form.hidden_tag() }}
             {% for field in form if field.widget.input_type != 'hidden' %}
                 {{ field.label(class="col-form-label col-sm-4") }}
-                {{ field(class="form-control col-sm-6") }}
+                {{ field(class="form-control col-sm-6", title=field.description) }}
+                <br style="clear: both"/>
+                <div style="font-size: 10px">{{ field.description }}</div>
             {% endfor %}
         </div>
          <div class="text-center">
